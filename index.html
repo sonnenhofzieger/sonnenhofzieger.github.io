@@ -15,6 +15,7 @@
 
   <!-- Structured Data Schema.org -->
   <script type="application/ld+json">
+  [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -103,7 +104,30 @@
     "sameAs": [
       "https://www.instagram.com/sonnenhof_zieger/"
     ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Welche Art von Kürbissen gibt es bei euch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir bieten drei verschiedene Arten von Kürbissen an: Speisekürbisse zum Kochen und Backen, Zierkürbisse zur Dekoration und Schnitzkürbisse perfekt für Halloween und andere Anlässe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Muss ich mich vorher bei euch melden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Für Kartoffeln, Kürbisse, Sorghum-Hirse und Sirup können Sie jederzeit vorbeikommen und sich selbst bedienen. Für Heu oder Stroh nehmen Sie bitte Kontakt mit uns auf, damit wir die passende Menge für Sie zur Abholung bereitlegen können."
+        }
+      }
+    ]
   }
+  ]
   </script>
 
   <!-- Bootstrap Core CSS -->
@@ -140,6 +164,9 @@
       </li>
       <li class="sidebar-nav-item">
         <a class="js-scroll-trigger" href="#portfolio">Verkauf ab Hof</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#faq">Häufige Fragen</a>
       </li>
       <li class="sidebar-nav-item">
         <a class="js-scroll-trigger" href="#contact">Kontakt</a>
@@ -204,16 +231,11 @@
                   Rest des Jahres Kartoffeln aus der Herbst-Ernte zum Einkellern oder in kleinen Päckchen.</p>
               </span>
             </span>
-            <img class="img-fluid" 
-                 src="img/mobile/portfolio-1.webp" 
-                 srcset="img/mobile/portfolio-1.webp 382w,
+            <img class="img-fluid" src="img/mobile/portfolio-1.webp" srcset="img/mobile/portfolio-1.webp 382w,
                          img/desktop/portfolio-1.webp 555w,
-                         img/portfolio-1.webp 1496w"
-                 sizes="(max-width: 576px) 382px,
+                         img/portfolio-1.webp 1496w" sizes="(max-width: 576px) 382px,
                         (max-width: 992px) 555px,
-                        555px"
-                 alt="Frische Kartoffeln vom Sonnenhof"
-                 loading="lazy">
+                        555px" alt="Frische Kartoffeln vom Sonnenhof" loading="lazy">
           </div>
         </div>
         <div class="col-lg-6">
@@ -226,16 +248,11 @@
                 </p>
               </span>
             </span>
-            <img class="img-fluid" 
-                 src="img/mobile/portfolio-5.webp" 
-                 srcset="img/mobile/portfolio-5.webp 382w,
+            <img class="img-fluid" src="img/mobile/portfolio-5.webp" srcset="img/mobile/portfolio-5.webp 382w,
                          img/desktop/portfolio-5.webp 555w,
-                         img/portfolio-5.webp 1496w"
-                 sizes="(max-width: 576px) 382px,
+                         img/portfolio-5.webp 1496w" sizes="(max-width: 576px) 382px,
                         (max-width: 992px) 555px,
-                        555px"
-                 alt="Sorghum-Hirse - glutenfrei und regional"
-                 loading="lazy">
+                        555px" alt="Sorghum-Hirse - glutenfrei und regional" loading="lazy">
           </div>
         </div>
         <div class="col-lg-6">
@@ -247,16 +264,11 @@
                   und Zierkürbisse-Auswahl ist für jeden Anlass und Geschmack etwas dabei. </p>
               </span>
             </span>
-            <img class="img-fluid" 
-                 src="img/mobile/portfolio-2.webp" 
-                 srcset="img/mobile/portfolio-2.webp 382w,
+            <img class="img-fluid" src="img/mobile/portfolio-2.webp" srcset="img/mobile/portfolio-2.webp 382w,
                          img/desktop/portfolio-2.webp 555w,
-                         img/portfolio-2.webp 1496w"
-                 sizes="(max-width: 576px) 382px,
+                         img/portfolio-2.webp 1496w" sizes="(max-width: 576px) 382px,
                         (max-width: 992px) 555px,
-                        555px"
-                 alt="Vielfältige Kürbisauswahl im Herbst"
-                 loading="lazy">
+                        555px" alt="Vielfältige Kürbisauswahl im Herbst" loading="lazy">
           </div>
         </div>
         <div class="col-lg-6">
@@ -268,16 +280,11 @@
                   Holunderblüte auch Zucker von unseren Rüben. Dazu gibt’s Rezeptideen von Eis bis Salatdressing.</p>
               </span>
             </span>
-            <img class="img-fluid" 
-                 src="img/mobile/portfolio-6.webp" 
-                 srcset="img/mobile/portfolio-6.webp 382w,
+            <img class="img-fluid" src="img/mobile/portfolio-6.webp" srcset="img/mobile/portfolio-6.webp 382w,
                          img/desktop/portfolio-6.webp 555w,
-                         img/portfolio-6.webp 1496w"
-                 sizes="(max-width: 576px) 382px,
+                         img/portfolio-6.webp 1496w" sizes="(max-width: 576px) 382px,
                         (max-width: 992px) 555px,
-                        555px"
-                 alt="Sonnenhof-Sirup - Mr. Minze und Frau Holle"
-                 loading="lazy">
+                        555px" alt="Sonnenhof-Sirup - Mr. Minze und Frau Holle" loading="lazy">
           </div>
         </div>
         <div class="col-lg-6">
@@ -290,16 +297,11 @@
                   vertrieben.</p>
               </span>
             </span>
-            <img class="img-fluid" 
-                 src="img/mobile/portfolio-3.webp" 
-                 srcset="img/mobile/portfolio-3.webp 382w,
+            <img class="img-fluid" src="img/mobile/portfolio-3.webp" srcset="img/mobile/portfolio-3.webp 382w,
                          img/desktop/portfolio-3.webp 555w,
-                         img/portfolio-3.webp 1496w"
-                 sizes="(max-width: 576px) 382px,
+                         img/portfolio-3.webp 1496w" sizes="(max-width: 576px) 382px,
                         (max-width: 992px) 555px,
-                        555px"
-                 alt="Regionales Schweinefleisch vom Sonnenhof"
-                 loading="lazy">
+                        555px" alt="Regionales Schweinefleisch vom Sonnenhof" loading="lazy">
           </div>
         </div>
         <div class="col-lg-6">
@@ -312,16 +314,37 @@
                   dazwischen.</p>
               </span>
             </span>
-            <img class="img-fluid" 
-                 src="img/mobile/portfolio-4.webp" 
-                 srcset="img/mobile/portfolio-4.webp 382w,
+            <img class="img-fluid" src="img/mobile/portfolio-4.webp" srcset="img/mobile/portfolio-4.webp 382w,
                          img/desktop/portfolio-4.webp 555w,
-                         img/portfolio-4.webp 1496w"
-                 sizes="(max-width: 576px) 382px,
+                         img/portfolio-4.webp 1496w" sizes="(max-width: 576px) 382px,
                         (max-width: 992px) 555px,
-                        555px"
-                 alt="Heu und Strohballen für Tiere"
-                 loading="lazy">
+                        555px" alt="Heu und Strohballen für Tiere" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section bg-light" id="faq">
+    <div class="container text-center">
+      <div class="content-section-heading">
+        <h2 class="mb-5">Häufige Fragen</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="text-left">
+            <div class="mb-4">
+              <h3 class="h4 mb-2">Welche Art von Kürbissen gibt es bei euch?</h3>
+              <p class="text-muted">Wir bieten drei verschiedene Arten von Kürbissen an: Speisekürbisse zum Kochen und
+                Backen, Zierkürbisse zur Dekoration und Schnitzkürbisse perfekt für Halloween und andere Anlässe.</p>
+            </div>
+            <div class="mb-4">
+              <h3 class="h4 mb-2">Muss ich mich vorher bei euch melden?</h3>
+              <p class="text-muted">Für Kartoffeln, Kürbisse, Sorghum-Hirse und Sirup können Sie jederzeit vorbeikommen
+                und sich selbst bedienen. Für Heu oder Stroh nehmen Sie bitte Kontakt mit uns auf, damit wir die
+                passende Menge für Sie zur Abholung bereitlegen können.</p>
+            </div>
           </div>
         </div>
       </div>
