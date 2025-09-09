@@ -375,3 +375,25 @@ a:hover, a:focus, a:active {
 .text-secondary {
   color: #ecb807 !important;
 }
+
+/* Improve contrast for text-muted elements */
+.text-muted {
+  color: #495057 !important; /* Darker gray with better contrast */
+}
+
+/* Improve link visibility and contrast */
+footer .text-muted a {
+  color: #212529 !important;
+  text-decoration: underline !important;
+}
+
+footer .text-muted a:hover,
+footer .text-muted a:focus {
+  color: #1D809F !important;
+  text-decoration: underline !important;
+}
+
+/* Ensure map placeholder has good contrast */
+#map-placeholder small {
+  color: #495057 !important;
+}
