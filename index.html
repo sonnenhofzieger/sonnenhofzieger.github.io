@@ -102,20 +102,20 @@
   <!-- Bootstrap Core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-  <!-- Custom Fonts -->
-  <link href="vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+  <!-- Custom Fonts (deferred loading) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic&display=swap"
     rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  
+  <!-- Icon fonts loaded after critical content -->
+  <link href="vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Custom CSS -->
   <link href="css/stylish-portfolio.css" rel="stylesheet">
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- Leaflet CSS will be loaded dynamically when needed -->
 
   <!-- Preload LCP image with high priority -->
   <link rel="preload" as="image" href="img/sonnenhof-luftbild.webp" fetchpriority="high">
@@ -428,7 +428,7 @@
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js" defer></script>
 
-    <!-- Leaflet JS (loaded only when needed) -->
+    <!-- Leaflet JS and CSS (loaded only when needed) -->
     <script>
       let mapLoaded = false;
 
@@ -438,6 +438,14 @@
         // Hide placeholder and show map container
         document.getElementById('map-placeholder').style.display = 'none';
         document.getElementById('leaflet-map').style.display = 'block';
+
+        // Load Leaflet CSS
+        const leafletCSS = document.createElement('link');
+        leafletCSS.rel = 'stylesheet';
+        leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        leafletCSS.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+        leafletCSS.crossOrigin = '';
+        document.head.appendChild(leafletCSS);
 
         // Load Leaflet JS
         const leafletScript = document.createElement('script');
