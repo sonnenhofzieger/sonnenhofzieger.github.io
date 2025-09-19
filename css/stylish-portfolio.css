@@ -118,7 +118,7 @@ h6 {
 /* Side Menu */
 #sidebar-wrapper {
   position: fixed;
-  z-index: 2;
+  z-index: 1050;
   right: 0;
   width: 250px;
   height: 100%;
@@ -193,7 +193,7 @@ h6 {
   color: #fff;
   background: rgba(52, 58, 64, 0.5);
   line-height: 50px;
-  z-index: 999;
+  z-index: 1100;
 }
 
 .menu-toggle:focus, .menu-toggle:hover {

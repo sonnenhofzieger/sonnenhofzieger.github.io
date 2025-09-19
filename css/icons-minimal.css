@@ -26,6 +26,7 @@
 
 /* Icons used on the site */
 .fa-bars:before { content: "\f0c9"; }
+.fa-times:before { content: "\f00d"; }
 .fa-phone:before { content: "\f095"; }
 .fa-envelope:before { content: "\f0e0"; }
 .fa-map-marker-alt:before { content: "\f3c5"; }
@@ -55,4 +56,4 @@
 }
 
 .icon-social-instagram:before { content: "\e609"; }
-.icon-game-controller:before { content: "\e033"; }
+.icon-game-controller:before { content: "\e01b"; }
