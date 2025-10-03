@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /datenschutz
+Disallow: /impressum
 
 Sitemap: https://sonnenhof-zieger.de/sitemap.xml
