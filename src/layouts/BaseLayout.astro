@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "Kartoffeln, Kürbisse, Heu & Stroh, Sorghum-Hirse, Sirup direkt vom Bauernhof in Großostheim kaufen",
+  ogImage = "https://sonnenhof-zieger.de/img/sonnenhof-luftbild.webp"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content={description}>
+
+  <title>{title}</title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={Astro.url}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content={Astro.url}>
+  <meta property="twitter:title" content={title}>
+  <meta property="twitter:description" content={description}>
+  <meta property="twitter:image" content={ogImage}>
+
+  <link rel="icon" type="image/png" href="/img/sonnenhof-zieger_ICON.png">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts (deferred loading) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://plausible.sonnenhof-zieger.de">
+  <link
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic&display=swap"
+    rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+
+  <!-- Minimal icon fonts -->
+  <link rel="stylesheet" href="/styles/icons-minimal.css" media="print" onload="this.media='all'">
+
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="/img/sonnenhof-luftbild.webp" fetchpriority="high">
+
+  <!-- Plausible Analytics -->
+  <script defer data-domain="sonnenhof-zieger.de" src="https://plausible.sonnenhof-zieger.de/js/script.js"></script>
+
+  <slot name="head" />
+</head>
+
+<body id="page-top">
+  <slot />
+</body>
+</html>
+
+<style lang="scss" is:global>
+  @import '../styles/main.scss';
+</style>

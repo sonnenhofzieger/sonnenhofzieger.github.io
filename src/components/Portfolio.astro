@@ -1,0 +1,76 @@
+---
+import PortfolioItem from './PortfolioItem.astro';
+
+const products = [
+  {
+    title: "Kartoffeln",
+    description: "Wir bieten ganzjährig eigene Kartoffeln: Frühkartoffeln von Juni bis August sowie den Rest des Jahres Kartoffeln aus der Herbst-Ernte zum Einkellern oder in kleinen Päckchen.",
+    image: "/img/portfolio-1.webp",
+    mobileImage: "/img/mobile/portfolio-1.webp",
+    desktopImage: "/img/desktop/portfolio-1.webp",
+    alt: "Frische Kartoffeln vom Sonnenhof"
+  },
+  {
+    title: "Kürbisse",
+    description: "Von Mitte August bis Ende Oktober ist bei uns Kürbis-Zeit. Bei unserer Ess-, Schnitz- und Zierkürbisse-Auswahl ist für jeden Anlass und Geschmack etwas dabei.",
+    image: "/img/portfolio-2.webp",
+    mobileImage: "/img/mobile/portfolio-2.webp",
+    desktopImage: "/img/desktop/portfolio-2.webp",
+    alt: "Vielfältige Kürbisauswahl im Herbst"
+  },
+  {
+    title: "Sorghum-Hirse",
+    description: "Hirse war um 5.000 v. Chr. Grundnahrungsmittel in Deutschland, dann geriet sie in Vergessenheit. Wir holen die hitzeresistente Pflanze zurück und versorgen Sie mit passenden Rezepten.",
+    image: "/img/portfolio-5.webp",
+    mobileImage: "/img/mobile/portfolio-5.webp",
+    desktopImage: "/img/desktop/portfolio-5.webp",
+    alt: "Sorghum-Hirse - glutenfrei und regional"
+  },
+  {
+    title: "Sonnenhof-Sirup",
+    description: "In unseren Sirup-Varianten Mr. Minze und Frau Holle steckt neben Pfefferminze bzw. Holunderblüte auch Zucker von unseren Rüben. Dazu gibt's Rezeptideen von Eis bis Salatdressing.",
+    image: "/img/portfolio-6.webp",
+    mobileImage: "/img/mobile/portfolio-6.webp",
+    desktopImage: "/img/desktop/portfolio-6.webp",
+    alt: "Sonnenhof-Sirup - Mr. Minze und Frau Holle"
+  },
+  {
+    title: "Schweinefleisch",
+    description: "Unsere Schweine fahren wir persönlich und ohne Umwege nach Aschaffenburg. Dort werden sie im Schlachthof geschlachtet und im Landkreis in verschiedenen Fleischereien verarbeitet und vertrieben.",
+    image: "/img/portfolio-3.webp",
+    mobileImage: "/img/mobile/portfolio-3.webp",
+    desktopImage: "/img/desktop/portfolio-3.webp",
+    alt: "Regionales Schweinefleisch vom Sonnenhof"
+  },
+  {
+    title: "Heu & Stroh",
+    description: "Das Heu und Stroh wächst auf Wiesen und Feldern rund um unseren Hof. Wir pressen es zu kleinen Ballen sowie Rundballen. Perfekt als Futter und Einstreu für Hasen, Pferde und alles dazwischen.",
+    image: "/img/portfolio-4.webp",
+    mobileImage: "/img/mobile/portfolio-4.webp",
+    desktopImage: "/img/desktop/portfolio-4.webp",
+    alt: "Heu und Strohballen für Tiere"
+  }
+];
+---
+
+<section class="content-section" id="portfolio">
+  <div class="container text-center">
+    <div class="content-section-heading text-center">
+      <h2>Kartoffeln, Kürbisse und mehr direkt vom Bauernhof</h2>
+    </div>
+    <p class="lead mb-5">
+      Bei uns auf dem Sonnenhof können Sie frische Kartoffeln
+      direkt vom Bauernhof kaufen – von schmackhaften Frühkartoffeln nach der ersten Ernte bis hin zu lagerfähigen
+      Sorten für den Winter. Wenn im Herbst die Kürbis Zeit beginnt, finden Sie auf unserem Bauernhof mit
+      Kürbissen eine bunte Vielfalt: Wir bieten eine große Auswahl an Esskürbissen, Zierkürbissen und
+      Schnitzkürbissen. Wir freuen uns auf Ihren Besuch!
+    </p>
+    <div class="row no-gutters">
+      {products.map((product) => (
+        <div class="col-lg-6">
+          <PortfolioItem {...product} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

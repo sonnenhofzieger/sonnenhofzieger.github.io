@@ -1,0 +1,90 @@
+---
+interface Props {
+  lat?: number;
+  lng?: number;
+  zoom?: number;
+  markerText?: string;
+}
+
+const {
+  lat = 49.9260082910842,
+  lng = 9.051845222711563,
+  zoom = 17,
+  markerText = "Sonnenhof Zieger<br>Bartholomäusweg 51<br>63762 Großostheim"
+} = Astro.props;
+---
+
+<div id="map-container" style="height: 450px; position: relative;">
+  <div id="map-placeholder"
+    style="height: 100%; background: #f8f9fa; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #dee2e6;">
+    <div style="text-align: center; color: #6c757d;">
+      <i class="fas fa-map-marker-alt fa-3x mb-3"></i>
+      <p>Karte laden<br><small>Klicken Sie hier, um die interaktive Karte zu laden</small></p>
+    </div>
+  </div>
+  <div id="leaflet-map" style="height: 100%; display: none;"></div>
+</div>
+
+<script define:vars={{ lat, lng, zoom, markerText }}>
+  let mapLoaded = false;
+
+  function loadLeafletMap() {
+    if (mapLoaded) return;
+
+    // Hide placeholder and show map container
+    document.getElementById('map-placeholder').style.display = 'none';
+    document.getElementById('leaflet-map').style.display = 'block';
+
+    // Load Leaflet CSS
+    const leafletCSS = document.createElement('link');
+    leafletCSS.rel = 'stylesheet';
+    leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    leafletCSS.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    leafletCSS.crossOrigin = '';
+    document.head.appendChild(leafletCSS);
+
+    // Load Leaflet JS
+    const leafletScript = document.createElement('script');
+    leafletScript.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    leafletScript.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    leafletScript.crossOrigin = '';
+    leafletScript.onload = function () {
+      // Initialize the map
+      const map = L.map('leaflet-map').setView([lat, lng], zoom);
+
+      // Add OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Add marker
+      L.marker([lat, lng])
+        .addTo(map)
+        .bindPopup(markerText)
+        .openPopup();
+    };
+    document.head.appendChild(leafletScript);
+    mapLoaded = true;
+  }
+
+  // Intersection Observer for lazy loading
+  const mapObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        loadLeafletMap();
+        mapObserver.disconnect();
+      }
+    });
+  }, { rootMargin: '50px' });
+
+  // Start observing when DOM is ready
+  document.addEventListener('DOMContentLoaded', function () {
+    const mapContainer = document.getElementById('map-container');
+    if (mapContainer) {
+      mapObserver.observe(mapContainer);
+
+      // Also load on click
+      document.getElementById('map-placeholder')?.addEventListener('click', loadLeafletMap);
+    }
+  });
+</script>

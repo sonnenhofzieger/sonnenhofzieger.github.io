@@ -1,0 +1,67 @@
+---
+interface NavItem {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  items?: NavItem[];
+  brandName?: string;
+}
+
+const {
+  items = [
+    { href: "#about", label: "Über uns" },
+    { href: "#portfolio", label: "Verkauf ab Hof" },
+    { href: "#faq", label: "Häufige Fragen" },
+    { href: "#contact", label: "Kontakt" }
+  ],
+  brandName = "Sonnenhof Zieger"
+} = Astro.props;
+---
+
+<!-- Navigation -->
+<a class="menu-toggle rounded" href="#" aria-label="Menü öffnen">
+  <i class="fas fa-bars"></i>
+</a>
+<nav id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <a class="js-scroll-trigger" href="#page-top">{brandName}</a>
+    </li>
+    {items.map((item) => (
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href={item.href}>{item.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  // Menu toggle functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.getElementById('sidebar-wrapper');
+    const icon = menuToggle?.querySelector('i');
+
+    menuToggle?.addEventListener('click', (e) => {
+      e.preventDefault();
+      sidebar?.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+      icon?.classList.toggle('fa-bars');
+      icon?.classList.toggle('fa-times');
+    });
+
+    // Close menu when clicking nav links
+    document.querySelectorAll('#sidebar-wrapper .js-scroll-trigger').forEach((link) => {
+      link.addEventListener('click', () => {
+        sidebar?.classList.remove('active');
+        menuToggle?.classList.remove('active');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        }
+      });
+    });
+  });
+</script>

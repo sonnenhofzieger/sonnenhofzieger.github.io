@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  mobileImage: string;
+  desktopImage: string;
+  alt: string;
+}
+
+const { title, description, image, mobileImage, desktopImage, alt } = Astro.props;
+---
+
+<div class="portfolio-item">
+  <span class="caption">
+    <span class="caption-content">
+      <h2>{title}</h2>
+      <p class="mb-0">{description}</p>
+    </span>
+  </span>
+  <img
+    class="img-fluid"
+    src={mobileImage}
+    srcset={`${mobileImage} 382w, ${desktopImage} 555w, ${image} 1496w`}
+    sizes="(max-width: 992px) 530px, 50vw"
+    alt={alt}
+    loading="lazy"
+  />
+</div>

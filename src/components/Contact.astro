@@ -1,0 +1,49 @@
+---
+import LeafletMap from './LeafletMap.astro';
+---
+
+<section id="contact">
+  <section class="content-section bg-primary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Kontakt</h2>
+
+      <div class="container text-center">
+        <p class="lead mb-5">
+          Schön, dass Sie uns hier gefunden haben. Wenn Sie uns kontaktieren möchten, rufen Sie gern an oder schreiben
+          eine Mail:
+        </p>
+
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fas fa-phone fa-3x mb-3"></i>
+            <div><a href="tel:+4960262151" class="text-white">06026 2151</a></div>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fas fa-envelope fa-3x mb-3"></i>
+            <a class="d-block text-white" href="mailto:hallo@sonnenhof-zieger.de">hallo@sonnenhof-zieger.de</a>
+          </div>
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fas fa-map-marker-alt fa-3x mb-3"></i>
+            <div>Sonnenhof Zieger<br>
+              Bartholomäusweg 51<br>
+              63762 Großostheim</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map">
+    <LeafletMap />
+    <br />
+    <small><a
+        href="https://www.openstreetmap.org/?mlat=49.92601&amp;mlon=9.05185#map=19/49.92601/9.05185&amp;layers=N">Größere
+        Karte anzeigen</a></small>
+    <br />
+    <small>
+      <a href="https://maps.app.goo.gl/uYnSQt4fALBJcF286" aria-label="Sonnenhof Zieger auf Google Maps anzeigen">Auf
+        Google Maps anzeigen</a>
+    </small>
+  </section>
+</section>

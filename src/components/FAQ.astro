@@ -1,0 +1,40 @@
+---
+const faqs = [
+  {
+    question: "Welche Art von Kürbissen gibt es bei euch?",
+    answer: "Wir bieten drei verschiedene Arten von Kürbissen an: Speisekürbisse zum Kochen und Backen, Zierkürbisse zur Dekoration und Schnitzkürbisse perfekt für Halloween und andere Anlässe."
+  },
+  {
+    question: "Brauche ich einen Termin?",
+    answer: "Kartoffeln, Hirse und Sirup liegen zur Selbstbedienung rund um die Uhr in unserer Hofladen-Verkaufshütte aus. Während der Saison steht eine große Kürbisauswahl ebenfalls zur Selbstbedienung im Hof bereit. Um Heu oder Stroh zu kaufen, nehmen Sie gern Kontakt mit uns auf, damit wir die passende Menge für Sie zur Abholung bereitlegen können."
+  },
+  {
+    question: "Wie funktioniert die Bezahlung?",
+    answer: "Die Preise stehen jeweils bei den Produkten, so dass jeder den passenden Geldbetrag einfach in die Kasse werfen kann."
+  },
+  {
+    question: "Wie komme ich zum Sonnenhof?",
+    answer: "Aus Richtung Aschaffenburg kommend am besten über den Bartholomäusweg. Die Google Maps Navigation leitet richtig. Manche Navigationssysteme schlagen schlecht befestigte Wege über Ringheim Ostring oder den Tauchseeweg vor. Davon raten wir ab. Aus Richtung Schaafheim kommend können Sie auf einer der beiden Straßen vor dem Kreisel links abbiegen."
+  }
+];
+---
+
+<section class="content-section bg-light" id="faq">
+  <div class="container text-center">
+    <div class="content-section-heading">
+      <h2 class="mb-5">Häufige Fragen</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="text-left">
+          {faqs.map((faq) => (
+            <div class="mb-4">
+              <h3 class="h4 mb-2">{faq.question}</h3>
+              <p class="text-muted">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

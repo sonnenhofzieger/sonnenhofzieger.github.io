@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Portfolio from '../components/Portfolio.astro';
+import FAQ from '../components/FAQ.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
+import SmoothScroll from '../components/SmoothScroll.astro';
+---
+
+<BaseLayout title="Sonnenhof Zieger - Kartoffeln, Kürbisse & mehr vom Bauernhof in Großostheim">
+  <Fragment slot="head">
+    <SchemaOrg />
+  </Fragment>
+
+  <Navigation />
+  <Hero />
+  <Portfolio />
+  <FAQ />
+  <About />
+  <Contact />
+  <Footer />
+  <SmoothScroll />
+</BaseLayout>

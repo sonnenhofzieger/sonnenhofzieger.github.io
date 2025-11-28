@@ -1,0 +1,45 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<BaseLayout title={`${title} - Sonnenhof Zieger`}>
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="mb-5">{title}</h2>
+          <div class="lead mb-5 text-left">
+            <slot />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer text-center">
+    <p class="text-muted small mb-0">
+      Diese Seite wird gestaltet von <a href="https://simonettazieger.de/">Simonetta</a> und
+      <a href="https://felixzieger.de/">Felix</a> | Copyright &copy; Sonnenhof Zieger {currentYear} | <a
+        href="/impressum">IMPRESSUM</a> | <a href="/datenschutz">DATENSCHUTZ</a>
+    </p>
+  </footer>
+</BaseLayout>
+
+<style>
+  .text-left h2, .text-left h3 {
+    margin-top: 1.5rem;
+  }
+  .text-left p {
+    text-align: left;
+  }
+  .text-left ul {
+    text-align: left;
+  }
+</style>

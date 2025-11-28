@@ -1,0 +1,22 @@
+---
+interface Props {
+  backgroundImage?: string;
+}
+
+const { backgroundImage = '/img/sonnenhof-luftbild.webp' } = Astro.props;
+---
+
+<header class="masthead d-flex">
+  <div class="container text-center my-auto text-white">
+  </div>
+  <div class="overlay"></div>
+</header>
+
+<style define:vars={{ backgroundImage: `url(${backgroundImage})` }}>
+  .masthead {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), var(--backgroundImage);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
