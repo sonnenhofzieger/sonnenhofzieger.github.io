@@ -1,14 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   title: string;
   description: string;
-  image: string;
-  mobileImage: string;
-  desktopImage: string;
+  image: ImageMetadata;
   alt: string;
 }
 
-const { title, description, image, mobileImage, desktopImage, alt } = Astro.props;
+const { title, description, image, alt } = Astro.props;
 ---
 
 <div class="portfolio-item">
@@ -18,11 +19,11 @@ const { title, description, image, mobileImage, desktopImage, alt } = Astro.prop
       <p class="mb-0">{description}</p>
     </span>
   </span>
-  <img
+  <Image
     class="img-fluid"
-    src={mobileImage}
-    srcset={`${mobileImage} 382w, ${desktopImage} 555w, ${image} 1496w`}
-    sizes="(max-width: 992px) 530px, 50vw"
+    src={image}
+    widths={[400, 600, 800]}
+    sizes="(max-width: 992px) 100vw, 50vw"
     alt={alt}
     loading="lazy"
   />

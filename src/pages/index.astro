@@ -1,4 +1,5 @@
 ---
+import { getImage } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
@@ -9,11 +10,15 @@ import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import SchemaOrg from '../components/SchemaOrg.astro';
 import SmoothScroll from '../components/SmoothScroll.astro';
+import heroImage from '../assets/img/sonnenhof-luftbild.JPG';
+
+const optimizedImage = await getImage({ src: heroImage, format: 'webp', width: 1200 });
+const schemaImage = new URL(optimizedImage.src, Astro.site).href;
 ---
 
 <BaseLayout title="Sonnenhof Zieger - Kartoffeln, Kürbisse & mehr vom Bauernhof in Großostheim">
   <Fragment slot="head">
-    <SchemaOrg />
+    <SchemaOrg image={schemaImage} />
   </Fragment>
 
   <Navigation />

@@ -1,4 +1,10 @@
 ---
+interface Props {
+  image?: string;
+}
+
+const { image = "https://sonnenhof-zieger.de/sonnenhof-luftbild.webp" } = Astro.props;
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -8,7 +14,7 @@ const localBusinessSchema = {
   "url": "https://sonnenhof-zieger.de",
   "telephone": "+49 6026 2151",
   "email": "hallo@sonnenhof-zieger.de",
-  "image": "https://sonnenhof-zieger.de/img/sonnenhof-luftbild.webp",
+  "image": image,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Bartholomäusweg 51",

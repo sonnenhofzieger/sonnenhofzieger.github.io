@@ -1,9 +1,8 @@
 ---
-interface Props {
-  backgroundImage?: string;
-}
+import { getImage } from 'astro:assets';
+import heroImage from '../assets/img/sonnenhof-luftbild.JPG';
 
-const { backgroundImage = '/img/sonnenhof-luftbild.webp' } = Astro.props;
+const optimizedBg = await getImage({ src: heroImage, format: 'webp', width: 1920 });
 ---
 
 <header class="masthead d-flex">
@@ -12,7 +11,7 @@ const { backgroundImage = '/img/sonnenhof-luftbild.webp' } = Astro.props;
   <div class="overlay"></div>
 </header>
 
-<style define:vars={{ backgroundImage: `url(${backgroundImage})` }}>
+<style define:vars={{ backgroundImage: `url(${optimizedBg.src})` }}>
   .masthead {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), var(--backgroundImage);
     background-position: center center;

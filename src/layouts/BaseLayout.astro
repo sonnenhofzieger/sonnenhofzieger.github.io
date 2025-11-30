@@ -1,15 +1,20 @@
 ---
+import { getImage } from 'astro:assets';
+import heroImage from '../assets/img/sonnenhof-luftbild.JPG';
+
 interface Props {
   title: string;
   description?: string;
-  ogImage?: string;
 }
+
+const optimizedOgImage = await getImage({ src: heroImage, format: 'webp', width: 1200 });
 
 const {
   title,
   description = "Kartoffeln, Kürbisse, Heu & Stroh, Sorghum-Hirse, Sirup direkt vom Bauernhof in Großostheim kaufen",
-  ogImage = "https://sonnenhof-zieger.de/img/sonnenhof-luftbild.webp"
 } = Astro.props;
+
+const ogImage = new URL(optimizedOgImage.src, Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -35,7 +40,7 @@ const {
   <meta property="twitter:description" content={description}>
   <meta property="twitter:image" content={ogImage}>
 
-  <link rel="icon" type="image/png" href="/img/sonnenhof-zieger_ICON.png">
+  <link rel="icon" type="image/png" href="/sonnenhof-zieger_ICON.png">
 
   <!-- Bootstrap Core CSS -->
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +57,7 @@ const {
   <link rel="stylesheet" href="/styles/icons-minimal.css" media="print" onload="this.media='all'">
 
   <!-- Preload LCP image -->
-  <link rel="preload" as="image" href="/img/sonnenhof-luftbild.webp" fetchpriority="high">
+  <link rel="preload" as="image" href={optimizedOgImage.src} fetchpriority="high">
 
   <!-- Plausible Analytics -->
   <script defer data-domain="sonnenhof-zieger.de" src="https://plausible.sonnenhof-zieger.de/js/script.js"></script>
