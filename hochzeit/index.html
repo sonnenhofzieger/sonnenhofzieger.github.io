@@ -51,6 +51,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
       }
 
       .scene {
@@ -164,6 +165,13 @@
       @media (max-width: 680px) {
         .card {
           box-shadow: var(--shadow-soft);
+        }
+      }
+
+      @supports (min-height: 100svh) {
+        body,
+        .scene {
+          min-height: 100svh;
         }
       }
     </style>
