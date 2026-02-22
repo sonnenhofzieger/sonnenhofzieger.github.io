@@ -1,205 +1,203 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Save The Date - Hochzeit</title>
-    <meta name="description" content="Save the date: unser grosser Tag steht bevor.">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Save The Date - Johanna & Felix">
-    <meta property="og:description" content="Unser großer Tag steht bevor. Bitte den 30. Mai 2026 vormerken.">
-    <meta property="og:url" content="https://sonnenhof-zieger.de/hochzeit/">
-    <meta property="og:image" content="https://sonnenhof-zieger.de/hochzeit/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Save The Date - Johanna & Felix">
-    <meta property="twitter:description" content="Unser großer Tag steht bevor. Bitte den 30. Mai 2026 vormerken.">
-    <meta property="twitter:image" content="https://sonnenhof-zieger.de/hochzeit/og-image.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Monsieur+La+Doulaise&family=Montaga&family=Cormorant+Upright:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap"
-      rel="stylesheet"
-    >
-    <style>
-      :root {
-        color-scheme: light;
-        --sage-0: #f4f5f0;
-        --sage-1: #e1e5db;
-        --sage-2: #cdd6c6;
-        --sage-3: #a1ad99;
-        --ink: #4a5a4b;
-        --gold: #b28a50;
-        --card: #f8f6f1;
-        --shadow: 0 24px 60px rgba(55, 63, 52, 0.16);
-        --shadow-soft: 0 10px 30px rgba(55, 63, 52, 0.12);
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Save The Date - Hochzeit</title>
+  <meta name="description" content="Save the date: unser grosser Tag steht bevor.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Save The Date - Johanna & Felix">
+  <meta property="og:description" content=". Bitte den 30. Mai 2026 vormerken.">
+  <meta property="og:url" content="https://sonnenhof-zieger.de/hochzeit/">
+  <meta property="og:image" content="https://sonnenhof-zieger.de/hochzeit/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Save The Date - Johanna & Felix">
+  <meta property="twitter:description" content="Unser großer Tag steht bevor. Bitte den 30. Mai 2026 vormerken.">
+  <meta property="twitter:image" content="https://sonnenhof-zieger.de/hochzeit/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Monsieur+La+Doulaise&family=Montaga&family=Cormorant+Upright:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --sage-0: #f4f5f0;
+      --sage-1: #e1e5db;
+      --sage-2: #cdd6c6;
+      --sage-3: #a1ad99;
+      --ink: #4a5a4b;
+      --gold: #b28a50;
+      --card: #f8f6f1;
+      --shadow: 0 24px 60px rgba(55, 63, 52, 0.16);
+      --shadow-soft: 0 10px 30px rgba(55, 63, 52, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 25% 10%, var(--sage-0), transparent 70%),
+        linear-gradient(135deg, var(--sage-1), var(--sage-2));
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .scene {
+      width: min(1100px, 100%);
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(32px, 6vw, 80px);
+      overflow: hidden;
+    }
+
+    .leaf {
+      position: fixed;
+      pointer-events: none;
+      user-select: none;
+      filter: drop-shadow(0 10px 18px rgba(60, 72, 60, 0.12));
+      animation: leaf-float 7s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .leaf.top-left {
+      top: clamp(-60px, -6vw, -10px);
+      left: clamp(-60px, -6vw, -10px);
+      width: clamp(280px, 40vw, 520px);
+      animation-delay: 0.2s;
+    }
+
+    .leaf.bottom-right {
+      bottom: clamp(-70px, -7vw, -10px);
+      right: clamp(-40px, -6vw, -10px);
+      width: clamp(280px, 42vw, 540px);
+      animation-delay: 0.8s;
+    }
+
+    .card-wrap {
+      position: relative;
+      width: min(720px, 92vw);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 6vw, 70px) clamp(24px, 7vw, 90px);
+      text-align: center;
+      border-radius: 4px;
+      animation: fade-in 1.2s ease-out;
+    }
+
+    .title {
+      font-family: "Great Vibes", "Monsieur La Doulaise", "Times New Roman", serif;
+      font-size: clamp(42px, 6.4vw, 68px);
+      color: var(--sage-3);
+      margin-bottom: clamp(12px, 2vw, 18px);
+      letter-spacing: 0.2px;
+      font-weight: 400;
+    }
+
+    .message {
+      font-family: "Montaga", "Times New Roman", serif;
+      font-size: clamp(15px, 2.2vw, 18px);
+      line-height: 1.7;
+      color: #5d6a58;
+      margin: 0 auto clamp(16px, 3vw, 24px);
+      max-width: 460px;
+    }
+
+    .date {
+      font-family: "Cinzel", "Times New Roman", serif;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: clamp(12px, 1.8vw, 15px);
+      color: var(--sage-3);
+      margin-bottom: clamp(20px, 4vw, 32px);
+    }
+
+    .names {
+      font-family: "Great Vibes", "Monsieur La Doulaise", "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(34px, 5.6vw, 46px);
+      color: var(--gold);
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes leaf-float {
+
+      0%,
+      100% {
+        transform: translateY(0);
       }
 
-      body {
-        min-height: 100vh;
-        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-        background: radial-gradient(1200px 700px at 25% 10%, var(--sage-0), transparent 70%),
-          linear-gradient(135deg, var(--sage-1), var(--sage-2));
-        color: var(--ink);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
+      50% {
+        transform: translateY(-6px);
       }
+    }
 
-      .scene {
-        width: min(1100px, 100%);
-        min-height: 100vh;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(32px, 6vw, 80px);
-        overflow: hidden;
-      }
-
-      .leaf {
-        position: fixed;
-        pointer-events: none;
-        user-select: none;
-        filter: drop-shadow(0 10px 18px rgba(60, 72, 60, 0.12));
-        animation: leaf-float 7s ease-in-out infinite;
-        z-index: 0;
-      }
-
-      .leaf.top-left {
-        top: clamp(-60px, -6vw, -10px);
-        left: clamp(-60px, -6vw, -10px);
-        width: clamp(280px, 40vw, 520px);
-        animation-delay: 0.2s;
-      }
-
-      .leaf.bottom-right {
-        bottom: clamp(-70px, -7vw, -10px);
-        right: clamp(-40px, -6vw, -10px);
-        width: clamp(280px, 42vw, 540px);
-        animation-delay: 0.8s;
-      }
-
-      .card-wrap {
-        position: relative;
-        width: min(720px, 92vw);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
+    @media (max-width: 680px) {
       .card {
-        position: relative;
-        z-index: 1;
-        background: var(--card);
-        box-shadow: var(--shadow);
-        padding: clamp(28px, 6vw, 70px) clamp(24px, 7vw, 90px);
-        text-align: center;
-        border-radius: 4px;
-        animation: fade-in 1.2s ease-out;
+        box-shadow: var(--shadow-soft);
       }
+    }
 
-      .title {
-        font-family: "Great Vibes", "Monsieur La Doulaise", "Times New Roman", serif;
-        font-size: clamp(42px, 6.4vw, 68px);
-        color: var(--sage-3);
-        margin-bottom: clamp(12px, 2vw, 18px);
-        letter-spacing: 0.2px;
-        font-weight: 400;
+    @supports (min-height: 100svh) {
+
+      body,
+      .scene {
+        min-height: 100svh;
       }
+    }
+  </style>
+</head>
 
-      .message {
-        font-family: "Montaga", "Times New Roman", serif;
-        font-size: clamp(15px, 2.2vw, 18px);
-        line-height: 1.7;
-        color: #5d6a58;
-        margin: 0 auto clamp(16px, 3vw, 24px);
-        max-width: 460px;
-      }
+<body>
+  <div class="scene">
+    <img class="leaf top-left" src="eucalyptus_top_left_desktop-UGz1lNF-.png" alt="Eukalyptus-Zweige oben links">
+    <img class="leaf bottom-right" src="eucalyptus_bottom_right_desktop-BLxpHn0i.png"
+      alt="Eukalyptus-Zweige unten rechts">
 
-      .date {
-        font-family: "Cinzel", "Times New Roman", serif;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        font-size: clamp(12px, 1.8vw, 15px);
-        color: var(--sage-3);
-        margin-bottom: clamp(20px, 4vw, 32px);
-      }
-
-      .names {
-        font-family: "Great Vibes", "Monsieur La Doulaise", "Times New Roman", serif;
-        font-weight: 400;
-        font-size: clamp(34px, 5.6vw, 46px);
-        color: var(--gold);
-      }
-
-      @keyframes fade-in {
-        from {
-          opacity: 0;
-          transform: translateY(16px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes leaf-float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-6px);
-        }
-      }
-
-      @media (max-width: 680px) {
-        .card {
-          box-shadow: var(--shadow-soft);
-        }
-      }
-
-      @supports (min-height: 100svh) {
-        body,
-        .scene {
-          min-height: 100svh;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="scene">
-      <img
-        class="leaf top-left"
-        src="eucalyptus_top_left_desktop-UGz1lNF-.png"
-        alt="Eukalyptus-Zweige oben links"
-      >
-      <img
-        class="leaf bottom-right"
-        src="eucalyptus_bottom_right_desktop-BLxpHn0i.png"
-        alt="Eukalyptus-Zweige unten rechts"
-      >
-
-      <div class="card-wrap">
-        <main class="card">
-          <h1 class="title">Save The Date</h1>
-          <p class="message">
-            Unser großer Tag steht bevor - haltet euch den Termin frei, wir feiern
-            gemeinsam!
-          </p>
-          <div class="date">30. Mai 2026 &middot; Großostheim</div>
-          <div class="names">Johanna &amp; Felix</div>
-        </main>
-      </div>
+    <div class="card-wrap">
+      <main class="card">
+        <h1 class="title">Save The Date</h1>
+        <p class="message">
+          Wir heiraten und freuen uns <br> gemeinsam mit euch zu feiern.
+        </p>
+        <div class="date">30. Mai 2026 &middot; Großostheim</div>
+        <div class="names">Johanna &amp; Felix</div>
+      </main>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
